@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #0a0a0a, #1c1c1c);
+  color: #d1d5db;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #047246;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+video {
+  border-radius: 1rem;
+  border: 3px solid #047246;
+  box-shadow: 0 6px 10px rgba(0, 255, 153, 0.4);
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-weight: 600;
+  color: #000;
+  background-color: #047246;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: #00cc7a;
+  color: #fff;
+}
+
+.status {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c0c0c0;
+  text-align: center;
+}
+
+.grid-container {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.song-tile {
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1c1c;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 255, 153, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.song-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 16px rgba(0, 255, 153, 0.5);
+}
+
+.song-tile img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid #047246;
+}
+
+.song-content {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.song-content p {
+  text-align: center;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  flex-grow: 1;
+}
+
+.song-content a {
+  text-align: center;
+  background-color: #047246;
+  color: #000;
+  padding: 0.4rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.song-content a:hover {
+  background-color: #047246;
+  color: #fff;
+}
+
+.player-container iframe {
+  border-radius: 1rem;
+}
+
+@media (max-width: 400px) {
+  .grid-container {
+    gap: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .song-tile img {
+    height: 100px;
   }
 }
