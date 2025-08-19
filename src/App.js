@@ -61,10 +61,14 @@ export default function App() {
     loadModels();
   }, []);
 
-  const startVideo = () => {
-    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+  const startVideo = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       videoRef.current.srcObject = stream;
-    });
+      await new Promise(resolve => (videoRef.current.onloadedmetadata = resolve));
+    } catch (err) {
+      console.error("Camera access error:", err);
+    }
   };
 
   const detectMood = async () => {
@@ -125,7 +129,7 @@ export default function App() {
       <h1> ✨ShiNe✨ </h1>
 
       <div className="video-container">
-        <video ref={videoRef} autoPlay muted width="300" />
+        <video ref={videoRef} autoPlay playsInline muted width="300" />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
           <button onClick={detectMood}>Detect Mood</button>
           <button onClick={() => { setSuggestedSongs([]); setEmotion(null); setPlayingVideoId(null); }} style={{backgroundColor:'#ef4444'}}>Reset</button>
