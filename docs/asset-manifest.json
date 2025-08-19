@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mood-music/static/css/main.83904de1.css",
+    "main.js": "/mood-music/static/js/main.feb841b2.js",
+    "static/js/453.8835f849.chunk.js": "/mood-music/static/js/453.8835f849.chunk.js",
+    "index.html": "/mood-music/index.html",
+    "main.83904de1.css.map": "/mood-music/static/css/main.83904de1.css.map",
+    "main.feb841b2.js.map": "/mood-music/static/js/main.feb841b2.js.map",
+    "453.8835f849.chunk.js.map": "/mood-music/static/js/453.8835f849.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83904de1.css",
+    "static/js/main.feb841b2.js"
+  ]
+}
