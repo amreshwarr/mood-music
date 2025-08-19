@@ -54,8 +54,8 @@ export default function App() {
 
   useEffect(() => {
     const loadModels = async () => {
-      await faceapi.nets.tinyFaceDetector.loadFromUri("/models");
-      await faceapi.nets.faceExpressionNet.loadFromUri("/models");
+      await faceapi.nets.tinyFaceDetector.loadFromUri(`${process.env.PUBLIC_URL}/models`);
+      await faceapi.nets.faceExpressionNet.loadFromUri(`${process.env.PUBLIC_URL}/models`);      
       startVideo();
     };
     loadModels();
